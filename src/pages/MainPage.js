@@ -9,7 +9,8 @@ import SvgSnippet from "./components/Snippets/SvgSnippet";
 import { svgGenerator } from "./logic";
 import Footer from "./components/Extras/Footer";
 import DownloadBundle from "./components/Extras/DownloadBundle";
-
+import MetaData from "./components/Extras/MetaData";
+import BgImage from "../img/bg.webp";
 export default function MainPage() {
 	useEffect(() => {
 		let test = document.getElementById("font-select");
@@ -19,10 +20,14 @@ export default function MainPage() {
 	}, []);
 	return (
 		<Fragment>
-			<Header />
+			{/* <Header /> */}
 			<div className='row'>
 				<div className='col-8'>
+					<div className='img-bg'>
+						<img src={BgImage} alt='Background' />
+					</div>
 					{/* <DownloadBundle /> */}
+					<MetaData />
 					<SvgHolder />
 				</div>
 				<div className='col-4'>

@@ -7,7 +7,7 @@ import { svgGenerator } from "./../../logic/";
 import { useDebounce } from "../../../customHooks";
 
 let SettingsHolder = (props) => {
-	let { dispatch } = props;
+	let { dispatch, pathLength, charCount, width, height } = props;
 
 	// eslint-disable-next-line no-unused-vars
 	let { fontFamily, fontVariant, text, size, unionCheckbox, separateCheckbox, bezierAccuracy, delay, duration, strokeWidth, fillColor, timingFunction, strokeColor, repeat, initialized } = props;
@@ -46,19 +46,12 @@ let SettingsHolder = (props) => {
 			<div className='tuners-holder'>
 				<div className='row'>
 					<div className='input-group'>
+						<label>Text:</label>
+
 						<textarea rows={3} className='input-text text-center ' type='text' id='input-text' value={inputText} placeholder='Input Text Here' onChange={(e) => setInputText(e.target.value)} />
 					</div>
 					<div className='input-group'>
-						<label>
-							Typeface:{" "}
-							<span className='fonts-info'>
-								(Check all fonts{" "}
-								<a className='fonts-link' href='https://fonts.google.com/?sort=alpha' target='_blank' rel='noopener noreferrer'>
-									here
-								</a>
-								)
-							</span>{" "}
-						</label>
+						<label>Typeface: </label>
 						<select id='font-select' value={fontFamily} onChange={(e) => update(SET_FONT_FAMILY, e.target.value)}></select>
 					</div>
 					<div className='input-group'>
@@ -84,6 +77,14 @@ let SettingsHolder = (props) => {
 						<input type='color' id='input-color' value={strokeColor} onChange={(e) => update(SET_STROKE_COLOR, e.target.value)} />
 					</div>
 				</div>
+
+				<div className='row'>
+					<div className='input-group'>
+						<label>
+							Price: <span className='h4 text-warning'> € {parseInt(pathLength * 0.15 + charCount * 10)} </span>
+						</label>
+					</div>
+				</div>
 			</div>
 			<div></div>
 		</div>
@@ -92,7 +93,8 @@ let SettingsHolder = (props) => {
 
 const mapStateToProps = (state) => {
 	let { settings, meta } = state;
-	return { ...settings, ...meta };
+	let { pathLength, charCount, width, height } = state.output;
+	return { ...settings, ...meta, ...{ pathLength, charCount, width, height } };
 };
 
 SettingsHolder = connect(mapStateToProps, null)(SettingsHolder);

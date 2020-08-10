@@ -1,5 +1,5 @@
 import store from "./../../redux/store";
-import { SET_JS, setOutput, setSettings, SET_PATH_LENGTH, SET_CHAR_COUNT, SET_WIDTH } from "./../../redux/actions";
+import { SET_JS, setOutput, setSettings, SET_PATH_LENGTH, SET_CHAR_COUNT, SET_WIDTH, SET_HEIGHT } from "./../../redux/actions";
 
 export function setAnimation(get_signature = false) {
 	let jscode = "";
@@ -70,5 +70,5 @@ export function setTextAnimation(delay, duration, strokeWidth, timingFunction, s
 	store.dispatch(setOutput(SET_CHAR_COUNT, text.replace(/ /g, "").length));
 	let svg = document.querySelector("#svg-holder svg");
 	store.dispatch(setOutput(SET_WIDTH, parseFloat(svg.getAttribute("width"))));
-	store.dispatch(setOutput(SET_CHAR_COUNT, parseFloat(svg.getAttribute("height"))));
+	store.dispatch(setOutput(SET_HEIGHT, parseFloat(svg.getAttribute("height"))));
 }
