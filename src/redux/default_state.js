@@ -3,7 +3,7 @@ export const default_state = {
 		fontFamily: "",
 		fontVariant: "",
 		text: "@akashraj9828",
-		size: 150,
+		size: 100,
 		unionCheckbox: false,
 		separateCheckbox: true,
 		bezierAccuracy: "",

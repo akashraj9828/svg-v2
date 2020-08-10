@@ -20,14 +20,20 @@ export default function MainPage() {
 	return (
 		<Fragment>
 			<Header />
-			<SettingsHolder />
-			<DownloadBundle />
-			<SvgHolder />
-			<CodeHolder>
-				<SvgSnippet />
-				<CssSnippet />
-				<JsSnippet />
-			</CodeHolder>
+			<div className='row'>
+				<div className='col-8'>
+					{/* <DownloadBundle /> */}
+					<SvgHolder />
+					{/* <CodeHolder> */}
+					{/* <SvgSnippet /> */}
+					{/* <CssSnippet /> */}
+					{/* <JsSnippet /> */}
+					{/* </CodeHolder> */}
+				</div>
+				<div className='col-4'>
+					<SettingsHolder />
+				</div>
+			</div>
 			<Footer />
 		</Fragment>
 	);

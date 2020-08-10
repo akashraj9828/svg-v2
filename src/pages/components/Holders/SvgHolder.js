@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 
 import { connect } from "react-redux";
 
 let SvgHolder = ({ svg }) => {
-	return <div id='svg-holder' dangerouslySetInnerHTML={{ __html: svg }}></div>;
+	const svg_holder = useRef(null);
+	useEffect(() => {
+		if (svg_holder) {
+			svg_holder.current.innerHTML = svg.trim();
+		}
+	}, [svg_holder, svg]);
+	return <div ref={svg_holder} id='svg-holder'></div>;
 };
 const mapStateToProps = (state) => {
 	let svg = state.output.svg;
