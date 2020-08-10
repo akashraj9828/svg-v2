@@ -24,14 +24,14 @@ export default function MainPage() {
 				<div className='col-8'>
 					{/* <DownloadBundle /> */}
 					<SvgHolder />
-					{/* <CodeHolder> */}
-					{/* <SvgSnippet /> */}
-					{/* <CssSnippet /> */}
-					{/* <JsSnippet /> */}
-					{/* </CodeHolder> */}
 				</div>
 				<div className='col-4'>
 					<SettingsHolder />
+					<CodeHolder>
+						<SvgSnippet />
+						{/* <CssSnippet /> */}
+						{/* <JsSnippet /> */}
+					</CodeHolder>
 				</div>
 			</div>
 			<Footer />

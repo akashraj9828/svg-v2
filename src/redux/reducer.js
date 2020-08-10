@@ -15,6 +15,10 @@ import {
 	SET_SVG,
 	SET_CSS,
 	SET_JS,
+	SET_PATH_LENGTH,
+	SET_CHAR_COUNT,
+	SET_WIDTH,
+	SET_HEIGHT,
 	// meta
 	SET_INITIALIZED,
 } from "./actions";
@@ -83,6 +87,18 @@ function reducer(state = default_state, action) {
 
 		case SET_SVG:
 			output.svg = value;
+			return { ...state, output };
+		case SET_PATH_LENGTH:
+			output.pathLength = value;
+			return { ...state, output };
+		case SET_CHAR_COUNT:
+			output.charCount = value;
+			return { ...state, output };
+		case SET_WIDTH:
+			output.width = value;
+			return { ...state, output };
+		case SET_HEIGHT:
+			output.height = value;
 			return { ...state, output };
 
 		case SET_INITIALIZED:

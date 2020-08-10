@@ -20,9 +20,9 @@ let SvgSnippet = ({ svg }) => {
 					Download SVG
 				</button>
 			</div>
-			<pre>
-				<code className='language-html'>{format(svg)}</code>
-			</pre>
+			{/* <pre> */}
+			{/* <code className='language-html'>{format(svg)}</code> */}
+			{/* </pre> */}
 		</div>
 	);
 };

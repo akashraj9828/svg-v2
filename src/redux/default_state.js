@@ -19,6 +19,10 @@ export const default_state = {
 		svg: "",
 		css: "",
 		js: "",
+		pathLength: 0,
+		charCount: 0,
+		width: 0,
+		height: 0,
 	},
 	meta: {
 		initialized: false,

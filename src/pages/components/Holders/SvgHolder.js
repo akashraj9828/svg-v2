@@ -1,15 +1,16 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, Fragment } from "react";
 
 import { connect } from "react-redux";
+import Draggable from "react-draggable";
 
 let SvgHolder = ({ svg }) => {
-	const svg_holder = useRef(null);
-	useEffect(() => {
-		if (svg_holder) {
-			svg_holder.current.innerHTML = svg.trim();
-		}
-	}, [svg_holder, svg]);
-	return <div ref={svg_holder} id='svg-holder'></div>;
+	return (
+		<Fragment>
+			<Draggable>
+				<div id='svg-holder' dangerouslySetInnerHTML={{ __html: svg }}></div>
+			</Draggable>
+		</Fragment>
+	);
 };
 const mapStateToProps = (state) => {
 	let svg = state.output.svg;
