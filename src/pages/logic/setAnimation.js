@@ -1,4 +1,5 @@
 import store from "./../../redux/store";
+// eslint-disable-next-line no-unused-vars
 import { SET_JS, setOutput, setSettings, SET_PATH_LENGTH, SET_CHAR_COUNT, SET_WIDTH, SET_HEIGHT } from "./../../redux/actions";
 
 export function setAnimation(get_signature = false) {

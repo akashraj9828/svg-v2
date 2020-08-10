@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 import React, { useEffect, useState } from "react";
 
 import { connect } from "react-redux";
@@ -19,10 +21,12 @@ let SettingsHolder = (props) => {
 
 	useEffect(() => {
 		update(SET_TEXT, debouncedText);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [debouncedText]);
 
 	useEffect(() => {
 		update(SET_SIZE, debouncedSize);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [debouncedSize]);
 
 	useEffect(() => {

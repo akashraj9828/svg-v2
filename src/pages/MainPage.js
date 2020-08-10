@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { Fragment, useEffect } from "react";
 import CssSnippet from "./components/Snippets/CssSnippet";
 import SettingsHolder from "./components/Holders/SettingsHolder";
