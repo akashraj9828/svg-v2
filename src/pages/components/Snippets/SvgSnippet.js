@@ -11,7 +11,7 @@ let SvgSnippet = ({ svg }) => {
 	return (
 		<div id='output-svg'>
 			<div className='context'>
-				<h2 className='code-heading'>SVG Snippet</h2>
+				{/* <h2 className='code-heading'>SVG Snippet</h2> */}
 				<button
 					className='download-btn'
 					onClick={() => {
