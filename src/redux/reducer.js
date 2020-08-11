@@ -87,6 +87,22 @@ function reducer(state = default_state, action) {
 
 		case SET_SVG:
 			output.svg = value;
+			const x = document.createElement("div");
+			x.innerHTML = value;
+			const paths = x.querySelectorAll("path");
+			let totalLength = 0;
+			for (let i = 0; i < paths.length; i++) {
+				const path = paths[i];
+				const length = path.getTotalLength();
+				totalLength += length;
+			}
+			const svgDom = x.querySelector("svg");
+			const width = parseFloat(svgDom.getAttribute("width"));
+			const height = parseFloat(svgDom.getAttribute("height"));
+			output.pathLength = totalLength;
+			output.width = width;
+			output.height = height;
+			output.charCount = state.settings.text.replace(/ /g, "").length;
 			return { ...state, output };
 		case SET_PATH_LENGTH:
 			output.pathLength = value;

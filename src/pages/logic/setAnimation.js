@@ -50,11 +50,9 @@ export function setAnimation(get_signature = false) {
 export function setTextAnimation(delay, duration, strokeWidth, timingFunction, strokeColor, repeat) {
 	let paths = document.querySelectorAll("path");
 	let mode = repeat ? "infinite" : "forwards";
-	let totalLength = 0;
 	for (let i = 0; i < paths.length; i++) {
 		const path = paths[i];
 		const length = path.getTotalLength();
-		totalLength += length;
 		path.style["stroke-dashoffset"] = `${length}px`;
 		path.style["stroke-dasharray"] = `${length}px`;
 		path.style["stroke-width"] = `${strokeWidth}px`;
@@ -62,14 +60,4 @@ export function setTextAnimation(delay, duration, strokeWidth, timingFunction, s
 		path.style["animation"] = `${duration}s svg-text-anim ${mode} ${timingFunction}`;
 		path.style["animation-delay"] = `${i * delay}s`;
 	}
-	store.dispatch(setOutput(SET_PATH_LENGTH, totalLength));
-	let state = store.getState();
-	let {
-		settings: { text },
-	} = state;
-
-	store.dispatch(setOutput(SET_CHAR_COUNT, text.replace(/ /g, "").length));
-	let svg = document.querySelector("#svg-holder svg");
-	store.dispatch(setOutput(SET_WIDTH, parseFloat(svg.getAttribute("width"))));
-	store.dispatch(setOutput(SET_HEIGHT, parseFloat(svg.getAttribute("height"))));
 }

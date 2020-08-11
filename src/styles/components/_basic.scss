@@ -107,27 +107,3 @@ footer {
 		}
 	}
 }
-
-footer {
-	color: yellow;
-	transition: 0.5s;
-	border-radius: 3px;
-	font-weight: bold;
-	.heart {
-		transition: 0.5s;
-	}
-	&:hover {
-		.heart,
-		a {
-			color: red;
-		}
-	}
-	a {
-		color: yellow;
-		text-decoration: none;
-		transition: 0.5s;
-		&:hover {
-			text-decoration: none;
-		}
-	}
-}
