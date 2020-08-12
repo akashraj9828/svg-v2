@@ -3,9 +3,9 @@
 
 > ## Libraries used
 >   - Redux (to maintain global state) check state => [./src/redux/default_state.js](./src/redux/default_state.js)
->   - Maker.js (to create SVG files) used in   [.\src\pages\logic\svgGenerator.js](.\src\pages\logic\svgGenerator.js)
->   - Opentype.js (for google fonts) used in  [.\src\pages\logic\svgGenerator.js](.\src\pages\logic\svgGenerator.js)
->   - react-draggable (for making SVG draggable) used in [.\src\pages\components\Holders\SvgHolder.js](.\src\pages\components\Holders\SvgHolder.js) 
+>   - Maker.js (to create SVG files) used in   [./src/pages/logic/svgGenerator.js](./src/pages/logic/svgGenerator.js)
+>   - Opentype.js (for google fonts) used in  [./src/pages/logic/svgGenerator.js](./src/pages/logic/svgGenerator.js)
+>   - react-draggable (for making SVG draggable) used in [./src/pages/components/Holders/SvgHolder.js](./src/pages/components/Holders/SvgHolder.js) 
 
 
 > ## Available Scripts
