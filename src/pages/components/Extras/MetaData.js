@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import "prismjs/themes/prism-tomorrow.css";
 import { connect } from "react-redux";
 
 let MetaData = ({ pathLength, charCount, width, height }) => {
