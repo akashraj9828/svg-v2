@@ -3,16 +3,16 @@
 import React, { useEffect, useState } from "react";
 
 import { connect } from "react-redux";
-import { SET_TEXT, SET_SIZE, SET_DELAY, SET_DURATION, SET_STROKE_WIDTH, setSettings, SET_FILL_COLOR, SET_FONT_FAMILY, SET_FONT_VARIANT, SET_TIMING_FUNCTION, SET_STROKE_COLOR, SET_REPEAT } from "./../../../redux/actions";
+import { SET_TEXT, SET_SIZE, setSettings, SET_FILL_COLOR, SET_FONT_FAMILY, SET_FONT_VARIANT, SET_STROKE_COLOR } from "./../../../redux/actions";
 
 import { svgGenerator } from "./../../logic/";
 import { useDebounce } from "../../../customHooks";
 
 let SettingsHolder = (props) => {
-	let { dispatch, pathLength, charCount, width, height } = props;
+	let { dispatch, pathLength, charCount } = props;
 
 	// eslint-disable-next-line no-unused-vars
-	let { fontFamily, fontVariant, text, size, unionCheckbox, separateCheckbox, bezierAccuracy, delay, duration, strokeWidth, fillColor, timingFunction, strokeColor, repeat, initialized } = props;
+	let { fontFamily, fontVariant, text, size, strokeWidth, fillColor, timingFunction, strokeColor, repeat, initialized } = props;
 	const [inputText, setInputText] = useState(text);
 	const [inputSize, setInputSize] = useState(size);
 
@@ -33,7 +33,7 @@ let SettingsHolder = (props) => {
 		if (initialized) {
 			svgGenerator.renderCurrent();
 		}
-	}, [debouncedText, debouncedSize, delay, duration, strokeWidth, fillColor, fontVariant, timingFunction, strokeColor, repeat, initialized]);
+	}, [debouncedText, debouncedSize, strokeWidth, fillColor, fontVariant, timingFunction, strokeColor, repeat, initialized]);
 
 	useEffect(() => {
 		if (initialized) {
@@ -51,7 +51,7 @@ let SettingsHolder = (props) => {
 				<div className='row'>
 					<div className='input-group'>
 						<label>Text:</label>
-
+						<br />
 						<textarea rows={3} className='input-text text-center ' type='text' id='input-text' value={inputText} placeholder='Input Text Here' onChange={(e) => setInputText(e.target.value)} />
 					</div>
 					<div className='input-group'>

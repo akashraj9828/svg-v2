@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useRef, useEffect, Fragment } from "react";
+import React, { Fragment } from "react";
 
 import { connect } from "react-redux";
 import Draggable from "react-draggable";
